@@ -488,7 +488,7 @@ local function DBGS_fake_script() -- TextBox.LocalScript
 		local ToolCount=0
 		for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 			if v:IsA("Tool") then
-				ToolCount=ToolCount+200
+				ToolCount=ToolCount+1
 			end
 		end
 		local cf=game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
@@ -946,3 +946,13 @@ local function LPDFVEO_fake_script() -- TextBox_5.LocalScript
 	end)
 end
 coroutine.wrap(LPDFVEO_fake_script)()
+
+
+
+for i,v in next, game:GetService("Players").LocalPlayer.Character:GetDescendants() do
+	if v:IsA("BasePart") and v.Name ~="HumanoidRootPart" then 
+		game:GetService("RunService").Heartbeat:connect(function()
+			v.Velocity = Vector3.new(-30,0,0)
+		end)
+	end
+end
