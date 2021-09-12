@@ -488,7 +488,7 @@ local function DBGS_fake_script() -- TextBox.LocalScript
 		local ToolCount=0
 		for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 			if v:IsA("Tool") then
-				ToolCount=ToolCount+1
+				ToolCount=ToolCount+200
 			end
 		end
 		local cf=game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
